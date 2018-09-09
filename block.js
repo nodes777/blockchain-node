@@ -5,7 +5,7 @@ class Block {
 		// where block in located in the chain
 		this.index = 0;
 		this.timestamp = timestamp;
-		this.data = data;
+		this.data = JSON.stringify(data);
 		// refers to previous block
 		this.previousHash = "0";
 		this.calculateHash = calculateHash.bind(this);
