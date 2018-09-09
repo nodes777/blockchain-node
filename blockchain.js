@@ -6,7 +6,7 @@ class Blockchain {
 	}
 
 	createGenesis() {
-		return new Block(0, "01/01/2017", "Genesis block", "0");
+		return new Block("Genesis block", "0");
 	}
 
 	latestBlock() {
@@ -26,6 +26,8 @@ class Blockchain {
 			const previousBlock = this.chain[i - 1];
 
 			if (currentBlock.hash !== currentBlock.calculateHash()) {
+				console.log("Doesnt match self hash");
+
 				return false;
 			}
 
