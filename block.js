@@ -1,10 +1,10 @@
 const SHA256 = require("crypto-js/sha256");
 
 class Block {
-	constructor(index, timestamp, data, previousHash) {
+	constructor(data, previousHash) {
 		// where block in located in the chain
 		this.index = 0;
-		this.timestamp = timestamp;
+		this.timestamp = new Date().valueOf();
 		this.data = JSON.stringify(data);
 		// refers to previous block
 		this.previousHash = "0";
